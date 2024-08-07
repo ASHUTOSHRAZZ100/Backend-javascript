@@ -1,16 +1,26 @@
 // require('dotenv').config({path : './env'})
-// import dotenv from 'dotenv'
-import mongoose from "mongoose";
-import { DB_NAME } from './constants.js'
+import dotenv from 'dotenv'
 import connectDB from './db/index.js'
-import express from 'express'
-const app = express();
+
+dotenv.config({
+    path : './env'
+})
+
+
+// method 2 to connect Mongodb
+connectDB()
+
+
+
+
+
+
 
 
 
 // method 1 to connect to mongoDB
 
-(async () => {
+/*(async () => {
     try {
         await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
         console.log('MongoDB is connect sccessfully')
@@ -27,4 +37,4 @@ const app = express();
         console.error('ERROR : ', error);
         throw error;
     }
-})();
+})();*/
